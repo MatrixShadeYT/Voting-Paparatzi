@@ -123,7 +123,7 @@
 
         const setupRealtimeListeners = () => {
             // Using a simpler path for your own project testing
-            const pollsRef = collection(db, 'polls');
+            const pollsRef = collection(db, 'artifacts', 'Voting-Paparatzi', 'polls');
             onSnapshot(pollsRef, (snapshot) => {
                 state.polls = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
                 render();
@@ -195,7 +195,7 @@
                 const q = document.getElementById('q-input').value;
                 const opts = Array.from(document.querySelectorAll('.opt-in')).map(i => i.value).filter(v => v);
                 if(!q || opts.length < 2) return;
-                await addDoc(collection(db, 'polls'), {
+                await addDoc(collection(db, 'artifacts', 'Voting-Paparatzi', 'polls'), {
                     question: q,
                     options: opts.map((t, i) => ({ id: 'o'+i, text: t, votes: 0 })),
                     authorName: state.userName,
