@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pollster - Vote & Create</title>
+    <title>Voting Paparatzi - Vote & Create</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Firebase SDKs -->
@@ -31,7 +31,7 @@
         
         <header id="main-header" class="p-6 bg-white sticky top-0 z-40 border-b border-gray-50">
             <div class="flex justify-between items-center mb-6">
-                <h1 class="text-3xl font-black italic tracking-tighter text-blue-600">POLLSTER</h1>
+                <h1 class="text-3xl font-black italic tracking-tighter text-blue-600">VOTING-PAPARATZI</h1>
                 <div id="sync-status" class="flex items-center gap-2 bg-gray-100 py-1 px-3 rounded-full">
                     <span id="status-dot" class="w-2 h-2 bg-yellow-500 rounded-full"></span>
                     <span id="status-text" class="text-[10px] font-bold text-gray-500 uppercase">Connecting</span>
@@ -43,7 +43,7 @@
         <main id="main-content" class="flex-1 px-6 py-4">
             <div id="loading-state" class="flex flex-col items-center justify-center py-20">
                 <div class="spinner"></div>
-                <p class="mt-4 text-gray-400 font-bold text-sm">Connecting to pollstar-21ba0...</p>
+                <p class="mt-4 text-gray-400 font-bold text-sm">Connecting to Voting-Paparatzi...</p>
                 <p id="error-display" class="mt-4 text-red-500 text-xs text-center hidden px-4"></p>
             </div>
         </main>
@@ -66,24 +66,25 @@
 
         // Your Config
         const firebaseConfig = {
-            apiKey: "AIzaSyDOSsDILOTn-hnrGaMlri_SDEL3R0202ns",
-            authDomain: "pollstar-21ba0.firebaseapp.com",
-            projectId: "pollstar-21ba0",
-            storageBucket: "pollstar-21ba0.firebasestorage.app",
-            messagingSenderId: "1032179871277",
-            appId: "1:1032179871277:web:f8e46e16577d2908f9d2a4"
+            apiKey: "AIzaSyCWynVdpJ7wJhWLmiLjvplkgiLyeui15WY",
+            authDomain: "matrixtechno-365c9.firebaseapp.com",
+            projectId: "matrixtechno-365c9",
+            storageBucket: "matrixtechno-365c9.firebasestorage.app",
+            messagingSenderId: "1088149809116",
+            appId: "1:1088149809116:web:3375c1bf048967a116d119",
+            measurementId: "G-WWKG5WLP9C"
         };
 
         let auth, db;
-        const appId = 'pollstar-21ba0';
+        const appId = 'Voting-Paparatzi';
 
         const state = {
             user: null,
-            userName: localStorage.getItem('pollster_user') || 'User' + Math.floor(Math.random() * 9000),
+            userName: localStorage.getItem('Voting-Paparatzi_user') || 'User' + Math.floor(Math.random() * 9000),
             view: 'home',
             activeCategory: 'All',
             polls: [],
-            votedPolls: JSON.parse(localStorage.getItem('pollster_voted') || '{}')
+            votedPolls: JSON.parse(localStorage.getItem('Voting-Paparatzi_voted') || '{}')
         };
 
         const CATEGORIES = ["General", "Tech", "Food", "Travel", "Gaming", "Life"];
